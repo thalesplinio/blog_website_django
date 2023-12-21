@@ -23,7 +23,7 @@ DATA_DIR = BASE_DIR / 'data' / 'web'
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hmo-=#^e^l*7mawq6=0y)m99=g9rvw1=47t0#98jv^zz_y*s)'
+SECRET_KEY = 'django-insecure-ho-=#^e^l*7mawq6=0y)m99=g9rvw1=47t0#98jv^zz_y*s)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'site_setup.context_processors.site_setup',
             ],
         },
     },

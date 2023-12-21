@@ -14,6 +14,7 @@ class MenuLinkInLine(admin.TabularInline):
     model = MenuLink
     extra = 1
 
+
 # Register your models here.
 @admin.register(SiteSetup)
 class SiteSetupAdmin(admin.ModelAdmin):
