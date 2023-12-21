@@ -11,6 +11,7 @@ __localcode
 *.pyc
 __pycache__
 db.sqlite3
+bancos.txt
 
 # Backup files #
 *.bak
