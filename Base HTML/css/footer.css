@@ -1,0 +1,91 @@
+footer{
+    background-color: var(--texto-primario);
+    color: var(--cor-de-fundo);
+}
+.content-footer{
+    display: flex;
+    position: relative;
+    max-width: 1200px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+.content-footer,
+.social,
+.created-by,
+.contact{
+    margin: auto;
+}
+.content-footer .social p{
+    font-size: var(--font-content-minimun-0);
+    margin: 10px;
+}
+.content-footer .created-by p{
+    font-size: var(--font-content-minimun-0);
+    margin: 10px;
+}
+.content-footer .contact p{
+    margin-top: 10px;
+    font-size: var(--font-content-minimun-0);
+}
+.content-footer .contact{
+    /* background-color:aquamarine; */
+}
+.content-footer .contact form input{
+    width: 350px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid var(--cor-hover);
+    border-radius: 10px;
+    outline: none;
+}
+.content-footer .contact form input:hover{
+    border: 1px solid var(--cor-hover);
+}
+.content-footer .contact form button{
+    background-color: var(--texto-primario);
+    color: var(--cor-de-fundo);
+    font-size: var(--font-content-minimun-0);
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid var(--cor-card);
+    
+}
+.content-footer .contact form button:hover{
+    background-color: var(--cor-card);
+    color: var(--texto-primario);
+}
+@media (max-width: 810px) {
+    .content-footer{
+        display: block;
+        height: 150px;
+        bottom: 0;
+    }
+    .content-footer .created-by p{
+        text-align: center;
+    }
+    .content-footer .contact{
+        margin-left: 30%;
+    }
+    .content-footer .contact form input{
+        width: 230px;
+        font-size: var();
+    }
+}
+@media (max-width: 682px) {
+    .content-footer .contact{
+        margin-left: 25%;
+    }
+}
+@media (max-width: 570px) {
+    .content-footer .contact{
+        margin-left: 7%;
+    }
+}

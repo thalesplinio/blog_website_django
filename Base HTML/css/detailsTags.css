@@ -1,0 +1,15 @@
+main .post-content-postage ul li{
+    margin: 0 50px 0 50px;
+}
+main .post-content-postage ol li{
+    margin: 0 50px 0 50px;
+}
+main .post-content-postage a{
+    color: var(--color-blue);
+    text-decoration: underline var(--color-blue);
+}
+main .post-content-postage a:hover{
+    background-color: var(--color-blue-hover);
+    border-radius: 3px;
+    text-decoration: none;
+}

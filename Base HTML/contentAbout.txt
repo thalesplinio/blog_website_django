@@ -1,0 +1,58 @@
+<h1>Sobre min</h1>
+<h2>Meu nome é Thales Plinio Alves Feitosa</h2>
+<h3>Sou Analista e desenvolvedor de sistemas</h3>
+<img loading="lazy" alt="Change me"src="https://picsum.photos/1920/1080/?rand=1" />
+<p>Sou estudante de análise e desenvolvimento de sistemas na UNICESUMAR. Sou um apaixonado por programação e tecnologia, 
+e tenho como objetivo seguir carreira na área de desenvolvimento de software.
+Tenho experiência com as linguagens de programação Python, C#, HTML, CSS, e JavaScript. 
+Sou capaz de desenvolver aplicativos web, jogos, e outros tipos de software.
+Durante o curso, aprendi sobre os fundamentos da programação, como algoritmos, estruturas de dados, 
+e arquitetura de software. Também tive a oportunidade de participar de projetos práticos, que me 
+ajudaram a desenvolver minhas habilidades.
+Além da programação, também tenho interesse em outras áreas, como design, marketing, e negócios.
+    Acredito que essas habilidades são importantes para um desenvolvedor de sucesso.
+Estou sempre em busca de novos desafios e oportunidades para aprender e crescer. Acredito que o mundo da 
+tecnologia é uma área em constante evolução, e é importante estar sempre atualizado.
+</p> 
+
+<h2>Objetivos</h2>
+<p>Meu objetivo é me tornar um desenvolvedor de software completo, 
+    capaz de trabalhar em projetos de diferentes áreas.
+        Também quero aprender novas linguagens de programação e tecnologias, 
+        e me manter atualizado sobre as últimas tendências da indústria.
+</p>
+
+<h2>Habilidades</h2>
+<ul>
+    <li>Linguagens de programação: Python, C#, HTML, CSS, e JavaScript</li>
+    <li>Desenvolvimento web: Front-end, Back-end, e Full-stack</li>
+    <li>Desenvolvimento de jogos: Unity, Unreal Engine</li>
+    <li>Algoritmos e estruturas de dados</li>
+    <li> Design</li>
+    <li>Marketing</li>
+    <li>Negócios</li>
+    <li>Projetos</li>
+    <li>Arquitetura de software</li>
+</ul>
+
+<h2>Projetos</h2>
+<ul>
+    <li>Desenvolvimento de um site de e-commerce</li>
+    <li>Desenvolvimento de um jogo mobile</li>
+    <li>Participação em um projeto de inteligência artificial</li>
+</ul>
+
+<h2>Contato</h2>
+<p>thales_plinio@hotmail.com</p>
+<p>https://github.com/thalesplinio</p>
+<p>[Seu LinkedIn]</p>
+<p>[Seu Twitter]</p>
+
+<h2>Comentários adicionais</h2>
+
+<p>
+Neste sobre mim, você pode incluir informações adicionais que você considere relevantes, 
+como seus hobbies, interesses, ou experiências pessoais. Você também pode personalizar o 
+texto para refletir sua personalidade e seus objetivos.
+Espero que este sobre mim ajude você a divulgar suas habilidades e conquistas.
+</p>

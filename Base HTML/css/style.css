@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'itens.css';
+@import 'nav.css';
+@import 'topContent.css';
+@import 'mainContent.css';
+@import 'footer.css';
+@import 'loader.css';
+@import 'post.css';
+@import 'detailsTags.css';
+@import 'page.css';
+@import 'pagination.css';
+@import 'scrollToTop.css';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: 0.1s;
+}
+/* SCROLL BAR */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: var(--branco);
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--cor-hover);
+    border-radius: 50px;
+}
+/* SCROLL BAR FIM...*/
+:root{
+    --back-color-full: #89D4D4;
+    --back-color-box: #F6F6F6;
+
+    --cor-fixed-blue-title: #162534;
+    --cor-fixed-hover-green: #97c680;
+    --cor-fixed-hover-orange: #feba88;
+    --cor-fixed-white: #fafafa;
+
+    --cor-hover-blue-to-orange: #162534;
+
+    --cor-de-fundo: #fafafa;
+    --cor-de-primeiro-plano: #c8d3cf;
+    --cor-de-primeiro-plano-01: #c8d3cf83;
+
+    --cor-card: #EFEFEF;
+    --cor-card-0: #efefef31;
+
+    --texto-primario: #162534;
+    --texto-secundario: #2e3f50;
+    --texto-secundario-2: #4c5e70;
+    --texto-secundario-2-with: #6b7b8a;
+
+    --texto-separator: #2e3f506d;
+    --cor-hover: #97c680;
+    --cor-toggle-n-muda: #162534;
+
+    /* Fonts */
+    --font-content-minimun-0: 12px;
+    --font-content-minimun: 14px;
+    --font-content-medium: 16px;
+    --font-content: 18px;
+    --font-content-2: 24px;
+    --font-sub-title: 38px;
+    --font-title: 40px;
+
+    /*  */
+    --color-blue: #0c49c2;
+    --color-blue-hover: #003db827;
+
+}
+.dark-mode:root{
+    
+    --back-color-full: #162534;
+    --back-color-box: #89D4D4;
+
+
+    --cor-hover-blue-to-orange: #feba88;
+
+    --cor-de-fundo: #162534;
+    --cor-de-primeiro-plano: #363636;
+    --cor-de-primeiro-plano-01: #162534;
+
+
+    --cor-card: #283d52;
+    --cor-card-0: #283d52;
+    
+    --texto-primario: #eeeeee;
+    --texto-secundario: #a7a6a6;
+    --texto-secundario-2: #e3e8ed;
+    --texto-secundario-2-with: #74818d;
+
+    --texto-separator: #a7a6a66c;
+    --cor-hover: #feba88;
+    --cor-toggle-n-muda: #162534;
+
+    
+    /*  */
+    --color-blue: #abbcde;
+    --color-blue-hover: #aebfe227;
+
+    
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    /* background-color: var(--back-color-full); */
+    background-color: var(--cor-de-fundo);
+    color: var(--texto-primario);
+    transition: scroll-top 1s ease-in-out;
+    scroll-behavior: smooth;
+
+}
+html{
+    scroll-behavior: smooth;
+    transition: scroll-top 1s ease-in-out;
+}
+.content-details{
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.content-details .content-subtitle{
+    margin: 10px;
+    text-align: center;
+    color: var(--texto-primario);
+}
+.content-details .content-subtitle h1{
+    font-size: var(--font-title);
+    font-weight: bold;
+    min-width: 200px;
+    text-align: center;
+}
+.content-details .content-subtitle p{
+    font-size: var(--font-content);
+    font-weight: 300;
+}
+.content-project {
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+.content-project span{
+    font-size: var(--font-content-medium);
+    font-weight: bold;
+    color: var(--texto-secundario);
+    margin-left: 10px;
+}
+.content-project .title-project{
+    margin-right: 50px;
+}
+.content-project .project{
+    padding: 30px;
+}
+.content-project .project h1{
+    font-size: var(--font-sub-title);
+    font-weight: 200;
+}
+.content-project .project p{
+    font-size: var(--font-content-medium);
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+.content-project .project{
+    display: flex;
+}
+.content-project .image-project img{
+    width: 600px;
+    border-radius: 10px;
+}
+.content-project .project .title-project .btn-black{
+    color: var(--texto-primario);
+    cursor: pointer;
+    font-size: var(--font-content-minimun);
+    border: 1px solid var(--texto-primario);
+    padding: 10px;
+}
+.content-project .project .title-project .btn-black:hover{
+    color: var(--cor-de-fundo);
+    background: var(--texto-primario);
+}
+@media (max-width: 1199px) {
+    .content-project .project{
+        display: block;
+    }
+    .content-project .image-project img{
+        margin-top: 30px;
+    }
+}
+.content-tecnology {
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+.content-tecnology span{
+    font-size: var(--font-content-medium);
+    font-weight: bold;
+    color: var(--texto-secundario);
+    margin-left: 10px;
+}
+.content-tecnology .technologies .card-tec{
+    display: flex;
+}
+.content-tecnology .technologies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+.content-tecnology .technologies .card-tec {
+    background-color: var(--cor-card);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    width: 180px;
+}
+.content-tecnology .technologies .card-tec:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
+}
+.content-tecnology .technologies .card-tec img{
+    width: 60px;
+    margin: auto;
+    margin: 10px
+}
+.content-tecnology .technologies .card-tec p{
+    text-align: center;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.content-tecnology .technologies .card-tec {
+    margin: auto;
+}
+@media (max-width: 915px) {
+    .content-tecnology .technologies .card-tec{
+        margin: 10px;
+    }
+}
+@media (max-width: 600px) {
+    .content-tecnology .technologies .card-tec{
+        margin: 10px;
+    }
+}

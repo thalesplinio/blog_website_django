@@ -1,0 +1,97 @@
+.top-bar{
+    background-color: var(--texto-primario);
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+    height: 35px;
+    display: flex;
+}
+.top-bar .center-top-bar{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.top-bar .center-top-bar .search-form{
+    /* background: #97c680; */
+    margin: auto;
+}
+.top-bar .center-top-bar .box-light-black{
+    /* background: #435e35; */
+    display: flex;
+}
+.top-bar .center-top-bar .box-light-black p{
+    text-align: center;
+    margin: auto;
+    font-size: 14px;
+    color: var(--cor-de-fundo);
+    user-select: none;
+    font-weight: 200;
+    padding-right: 10px;
+}
+.top-bar .center-top-bar .box-light-black .switch{
+    margin-top: -2.5px;
+    width: 50px;
+    height: 30px;
+    border-radius: 100px;
+    cursor: pointer;
+    background-color: var(--cor-de-primeiro-plano);
+    display: flex;
+    position: relative;
+    align-items: center;
+    transition: all 0.5s;
+}
+.top-bar .center-top-bar .box-light-black .switch::before {
+    content: "";
+    display: block;
+    background: var(--cor-toggle-n-muda);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    left: 3px;
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -ms-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.top-bar .center-top-bar .box-light-black .switch-input {
+    display: none;
+}
+.top-bar .center-top-bar .box-light-black .switch-input:checked + .switch {
+    background: var(--cor-toggle-n-muda);
+}
+.top-bar .center-top-bar .box-light-black .switch-input:checked + .switch::before {
+    background:#fff;
+    left: calc(
+        (50px - 22px) - 3px
+    );
+}
+/* search */
+.top-bar .center-top-bar .search-form form{
+    padding: 0;
+    margin-top: -2px;
+}
+.top-bar .center-top-bar .search-form input{
+    padding: 10px;
+    height: 30px;
+    width: 315px;
+    margin: auto;
+    border: 1px solid var(--cor-hover);
+    border-radius: 10px;
+    outline: none;
+}
+@media (max-width: 548px) {
+    .top-bar .center-top-bar{
+        justify-content:space-around;
+    }
+    .top-bar .center-top-bar .search-form {
+        margin: 0;
+    }
+    .top-bar .center-top-bar .search-form input{
+        width: 200px;
+    }
+}

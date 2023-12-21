@@ -1,0 +1,91 @@
+main .main-content-post{
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    background: #c7c7c716;
+    border-radius: 50px;
+}
+main .main-content-post .page-content{
+    display: flex;
+    margin-bottom: 20px;
+}
+main .main-content-post .page-content .content-summary-me{
+    text-align: left;
+    padding: 20px;
+    font-size: var(--font-title);
+}
+main .main-content-post .page-content .content-summary-me h1{
+    font-size: var(--font-sub-title);
+}
+main .main-content-post .page-content .content-summary-me h2{
+    font-size: var(--font-content);
+    color: var(--texto-secundario-2-with);
+}
+main .main-content-post .page-content .content-summary-me h3{
+    font-size: var(--font-content-minimun);
+    color: var(--texto-secundario-2-with);
+}
+main .main-content-post .page-content .content-contact{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px;
+}
+main .main-content-post .page-content .content-contact .contact-email label{
+    color: var(--texto-secundario-2-with);
+    font-weight: bold;
+}
+main .main-content-post .page-content .content-contact .contact-phone label{
+    color: var(--texto-secundario-2-with);
+    font-weight: bold;
+}
+main .main-content-post .page-content .content-contact .contact-phone .link-whats-about{
+    color: var(--texto-secundario-2-with);
+}
+main .main-content-post .page-content .content-contact .contact-address label{
+    color: var(--texto-secundario-2-with);
+    font-weight: bold;
+}
+main .main-content-post .page-content .content-contact span{
+    color: var(--texto-secundario-2-with);
+}
+
+main .main-content-post .summary-about-more{
+    margin-top: 30px;
+}
+main .main-content-post .summary-about-more img{
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+@media (max-width: 1200px) {
+    main .main-content-post .page-content .content-contact{
+        margin: 0;
+        padding: 20px;
+    }
+    /* main .main-content-post .summary-about-more{
+        padding: 10px;
+    } */
+    main .main-content-post .page-content{
+        display: block;
+    }
+}
+@media (max-width: 700px) {
+    /* main .main-content-post .page-content .content-contact{
+        margin: 0;
+        padding: 60px 10px 0 0;
+    } */
+    main .main-content-post .page-content{
+        display: block;
+    }
+    main .main-content-post .page-content .content-summary-me{
+        padding: 0;
+    }
+    main .main-content-post .page-content .content-contact{
+        margin: 0;
+        padding: 0;
+    }
+}
