@@ -218,3 +218,31 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Technology(models.Model):
+    class Meta:
+        verbose_name = 'Tecnologia'
+        verbose_name_plural = 'Tecnologias'
+
+    name = models.CharField(max_length=20)
+    image = models.ImageField(
+        upload_to='assets/tecnology_image/%Y/%m',
+        blank=True,
+        default='',
+        verbose_name="Adicionar imagem para a tecnologia",
+        )
+
+    def save(self, *args, **kwargs):
+        current_image_name = str(self.image.name)
+        super().save(*args, **kwargs)
+        image_changed = False
+
+        if self.image:
+            image_changed = current_image_name != self.image.name
+
+        if image_changed:
+            resize_image(self.image, 60)
+
+    def __str__(self):
+        return self.name

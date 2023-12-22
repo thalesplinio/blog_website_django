@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Tag, Category, Page, Post
+from blog.models import (Tag, Category, Page, Post, Technology)
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -73,3 +73,9 @@ class PostAdmin(SummernoteModelAdmin):
             obj.created_by = request.user
 
         obj.save()
+
+
+@admin.register(Technology)
+class TechnologyAdmin(admin.ModelAdmin):
+    list_display = 'id', 'name',
+    list_display_links = 'id', 'name',
