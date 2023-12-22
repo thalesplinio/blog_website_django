@@ -7,49 +7,29 @@
             <div class="separator-titles-section"></div>
             </div>
             <div class="card-container">
-            <div class="card">
-                <a href="post.html">
-                <img src="img/altumcode.jpg" alt="">
-                </a>
+
+            {% for post in page_obj %}
+                <div class="card">
+                    <a href="{% url 'blog:post' post.slug %}">
+                    {% if post.cover %}
+                        <img src="{{ post.cover.url }}" alt="Imagem do post {{ post.title }}">
+                    {% endif %}
+                    </a>
+
                 <div class="card-content">
-                <a href="post.html">
-                    <h2>Card Title</h2>
-                <p>resumo resumo resumo resumo resumo 
-                    resumo resumo resumo resumo resumo 
-                </p>
-                <a href="post.html" class="btn-black">Ver mais</a>
+                    <a href="{% url 'blog:post' post.slug %}">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.excerpt }}</p>
+                    <a href="{% url 'blog:post' post.slug %}" class="btn-black">Ver mais</a>
+                
                 </div>
-            </div>
-            <div class="card">
-                <a href="">
-                <img src="img/altumcode.jpg" alt="">
-                </a>
-                <div class="card-content">
-                <a href="">
-                    <h2>Card Title</h2>
-                <p>resumo resumo resumo resumo resumo 
-                    resumo resumo resumo resumo resumo 
-                </p>
-                <a href="#" class="btn-black">Ver mais</a>
                 </div>
-            </div>
-            <div class="card">
-                <a href="">
-                <img src="img/altumcode.jpg" alt="">
-                </a>
-                <div class="card-content">
-                <a href="">
-                    <h2>Card Title</h2>
-                <p>resumo resumo resumo resumo resumo 
-                    resumo resumo resumo resumo resumo 
-                </p>
-                <a href="#" class="btn-black">Ver mais</a>
-                </div>
-            </div>
+            {% endfor %}
+
             </div>
             <!-- BUTTOM SEE MORE -->
             <div class="see-more-projects-page">
-            <a href="projects.html" class="btn-white">
+            <a href="{% url 'blog:projects' %}" class="btn-white">
                 Ver mais Projetos
             </a>
             </div>

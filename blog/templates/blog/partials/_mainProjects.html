@@ -5,21 +5,31 @@
         <span>PROJETOS</span>
         <div class="separator-titles-section"></div>
       </div>
-      <div class="card-container">
-        <div class="card">
-          <a href="">
-            <img src="img/altumcode.jpg" alt="">
-          </a>
-          <div class="card-content">
-            <a href="">
-              <h2>Card Title</h2>
-            <p>resumo resumo resumo resumo resumo 
-              resumo resumo resumo resumo resumo 
-            </p>
-            <a href="#" class="btn-black">Ver mais</a>
-          </div>
+
+
+        <div class="card-container">
+
+          {% for post in page_obj %}
+            <div class="card">
+                <a href="{% url 'blog:post' post.slug %}">
+                  {% if post.cover %}
+                    <img src="{{ post.cover.url }}" alt="Imagem do post {{ post.title }}">
+                  {% endif %}
+                </a>
+
+              <div class="card-content">
+                <a href="{% url 'blog:post' post.slug %}">
+                  <h2>{{ post.title }}</h2>
+                  <p>{{ post.excerpt }}</p>
+                <a href="{% url 'blog:post' post.slug %}" class="btn-black">Ver mais</a>
+             
+              </div>
+            </div>
+          {% endfor %}
+
         </div>
-      </div>
+
+        
     </section>
 </main>
 <!-- MAIN PROJECT CARDS -->
