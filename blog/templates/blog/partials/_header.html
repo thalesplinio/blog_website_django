@@ -1,21 +1,48 @@
-<!-- CABEÇALHO -->
-<header>
-    <nav>
-        <a class="logo" href="index.html">
-        <p>Thales.</p> 
-        </a>
-        <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-        <li><a href="index.html" class="text">Início</a></li>
-        <li><a href="page.html" class="text">Sobre</a></li>
-        <li><a href="post.html" class="text">Post</a></li>
-        <li><a href="projects.html" class="text">Projetos</a></li>
-        <li><a href="#" class="text">Contato</a></li>
-        </ul>
-    </nav>
-</header>
-<!-- CABEÇALHO FIM -->
+{% if site_setup.show_header %}
+    <!-- CABEÇALHO -->
+    <header>
+        {% if site_setup.show_menu %}
+            <nav>
+                <a class="logo" href="{% url 'blog:index' %}">
+                <p>
+                    {% if site_setup.site_name %}
+                        {{ site_setup.site_name }}
+                    {% endif %}
+                </p> 
+                </a>
+
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+
+                <ul class="nav-list">
+                    <li>
+                        <a href="{% url 'blog:index' %}" class="text">Início</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'blog:projects' %}" class="text">Projetos</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'blog:page' %}" class="text">Sobre</a>
+                    </li>
+
+                    
+                    {% comment %} {{ site_setup.menulink_set.all }} {% endcomment %}
+                    {% for link in site_setup.menulink_set.all %}
+                        <li>
+                            {% if link.new_tab %}
+                                <a target="_blank" href="{{ link.url_or_path }}" class="text">{{ link.text }}</a>
+                            {% else %}
+                                <a href="{{ link.url_or_path }}" class="text">{{ link.text }}</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </nav>
+        {% endif %}
+    </header>
+    <!-- CABEÇALHO FIM -->
+{% endif %}

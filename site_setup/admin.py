@@ -18,7 +18,8 @@ class MenuLinkInLine(admin.TabularInline):
 # Register your models here.
 @admin.register(SiteSetup)
 class SiteSetupAdmin(admin.ModelAdmin):
-    list_display = 'title', 'description',
+    list_display = 'site_name', 'title', 'description',
+    list_display_links = 'site_name', 'title',
     inlines = MenuLinkInLine,
 
     # removendo a opção de adicionar mais de um setup

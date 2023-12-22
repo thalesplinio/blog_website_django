@@ -1,17 +1,24 @@
-<!-- DARKMODE AND TOP BAR TOGGLE  -->
-<div class="top-bar">
-    <div class="center-top-bar">
-        <div class="search-form">
-            <form action="" method="'GET" class="form-search">
-                <input type="search" name="termo" value="" class="search" placeholder="Buscar algo?" aria-label="Search">
-            </form>
-        </div>
-        <div class="box-light-black">
-            <p>Modo escuro</p>
-            <label for="checkbox" class="toggle"></label>
-            <input type="checkbox" id="switch" class="switch-input">
-            <label for="switch" class="switch"></label>
+{% if site_setup.show_first_top_bar %}
+    <!-- DARKMODE AND TOP BAR TOGGLE  -->
+    <div class="top-bar">
+        <div class="center-top-bar">
+            {% if site_setup.show_search %}
+            <div class="search-form">
+                <form action="" method="'GET" class="form-search">
+                    <input type="search" name="termo" value="" class="search" placeholder="Buscar algo?" aria-label="Search">
+                </form>
+            </div>
+            {% endif %}
+            
+            {% if site_setup.show_dark_mode %}
+            <div class="box-light-black">
+                <p>Modo escuro</p>
+                <label for="checkbox" class="toggle"></label>
+                <input type="checkbox" id="switch" class="switch-input">
+                <label for="switch" class="switch"></label>
+            </div>
+            {% endif %}
         </div>
     </div>
-</div>
-<!-- DARKMODE AND TOP BAR TOGGLE FIM!!! -->
+    <!-- DARKMODE AND TOP BAR TOGGLE FIM!!! -->
+{% endif %}

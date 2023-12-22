@@ -1,12 +1,24 @@
-<!-- CONTENT TITLE SUBTITLE INDEX -->
-<aside class="content-details">
-    <div class="content-subtitle">
-        <h1>Seu blog de Desenvolvimento!</h1>
-        <div class="separator-titles-h1-top"></div>
-        <p>Me chamo Thales Plinio. Sou um desenvolvedor full-stack e criador de conteúdo construindo minha versão do 
-            mundo digital um passo de cada vez. Todos os projetos de codificação são construídos do zero, desde o planejamento e 
-            design até a resolução de problemas da vida real com código.</p>
-    </div>
-</aside>
-<div class="separator"></div>
-<!-- CONTENT TITLE SUBTITLE INDEX FIM -->
+{% if site_setup.show_title_subtitle %}
+    <!-- CONTENT TITLE SUBTITLE INDEX -->
+    <aside class="content-details">
+        <div class="content-subtitle">
+
+            {% if site_setup.title %}
+                <h1>
+                    {{ site_setup.title }}
+                </h1>
+            {% endif %}
+
+            <div class="separator-titles-h1-top"></div>
+
+            {% if site_setup.description %}
+                <p>
+                    {{ site_setup.description }}
+                </p>
+            {% endif %}
+            
+            </div>
+    </aside>
+    <div class="separator"></div>
+    <!-- CONTENT TITLE SUBTITLE INDEX FIM -->
+{% endif %}
