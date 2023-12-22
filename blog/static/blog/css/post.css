@@ -1,0 +1,90 @@
+main .main-content-post{
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    /* margin: 20px; */
+}
+main .main-content-post .title-post h1{
+    font-size: var(--font-title);
+}
+main .main-content-post,
+.title-post,
+.post-subtitle,
+.details-post-owner,
+.post-status {
+    padding: 0 50px 0 50px;
+}
+main .main-content-post,
+.details-post-owner,
+.post-by span{
+    font-size: var(--font-content-minimun);
+}
+.main-content-post .details-post-owner label{
+    color: var(--texto-secundario-2-with);
+}
+.main-content-post .details-post-owner{
+    display: flex;
+    margin: 10px;
+}
+.main-content-post
+.details-post-owner,
+.post-by,
+.post-date,
+.post-category{
+    margin: 0 20px 10px 0;
+}
+.main-content-post .post-status label{
+    color: var(--texto-secundario-2-with);
+}
+.main-content-post .post-status {
+    margin: 0 20px 30px 0;
+}
+.main-content-post .post-subtitle{
+    display: flex;
+    font-weight: 400;
+    color: var(--texto-secundario-2-with);
+    text-align: left;
+    padding-bottom: 20px;
+}
+main .post-content-postage{
+    position: relative;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 10px 50px 10px;
+}
+
+.post-details-owner-footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.post-details-owner-footer .post-status .btn-black-tag{
+    color: var(--texto-primario);
+    cursor: pointer;
+    font-size: var(--font-content-minimun);
+    border: 1px solid var(--texto-primario);
+    border-radius: 5px;
+    padding: 7px;
+}
+.post-details-owner-footer .post-status .btn-black-tag:hover{
+    color: var(--cor-de-fundo);
+    background: var(--texto-primario);
+}
+@media (max-width: 1200px) {
+    main .main-content-post{
+        margin: 15px;
+    }
+    main .main-content-post,
+        .title-post,
+        .post-subtitle,
+        .details-post-owner,
+        .post-status {
+        padding: 9px;
+    }
+    main .post-content-postage{
+        padding: 50px 0 0 0;
+    }
+}

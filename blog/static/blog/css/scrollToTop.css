@@ -1,0 +1,36 @@
+#btnScrollToTop{
+    position: fixed;
+    right: 3px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--cor-hover);
+    box-shadow: 0 0 10px rgba(22, 16, 16, 0.25);
+    color: var(--cor-fixed-white);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .4s;
+    margin-right: 10px;
+    scroll-behavior: smooth;
+    transition: scroll-top 1s ease-in-out;
+    z-index: 1;
+    top: 75%;
+}
+#btnScrollToTop span{
+    color: var(--cor-fixed-blue-title);
+}
+#btnScrollToTop:hover{
+    box-shadow: 0 0 10px var(--cor-hover);
+}
+#btnScrollToTop.active{
+    scroll-behavior: smooth;
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+#btnScrollToTop:active{
+    background-color: var(--cor-hover);
+    scroll-behavior: smooth;
+}

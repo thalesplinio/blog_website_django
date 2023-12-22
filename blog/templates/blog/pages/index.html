@@ -1,5 +1,8 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <h1>Olá mundo</h1>
+    {% include "blog/partials/_titleSubTitle.html" %}
+    {% include "blog/partials/_projectDestaque.html" %}
+    {% include "blog/partials/_contentTechnologies.html" %}
+    {% include "blog/partials/_mainIndexCard.html" %}
 {% endblock content %}

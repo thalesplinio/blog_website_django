@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def index(request):
+def post(request):
     return render(
         request,
-        'blog/pages/index.html'
+        'blog/pages/post.html'
     )
