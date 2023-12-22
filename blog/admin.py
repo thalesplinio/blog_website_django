@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Tag, Category
+from blog.models import Tag, Category, Page
 
 
 @admin.register(Tag)
@@ -27,4 +27,20 @@ class CategoryAdmin(admin.ModelAdmin):
     # preenche o slug automático no django admin
     prepopulated_fields = {
         'slug': ('name',),
+    }
+
+
+@admin.register(Page)
+class PageAdmin(admin.ModelAdmin):
+    list_display = 'id', 'full_name', 'is_published',
+    list_display_links = 'full_name',
+    search_fields = 'id', 'slug', 'full_name', 'content',
+    list_per_page = 50
+    list_filter = 'is_published',
+    list_editable = 'is_published',
+    ordering = '-id',
+
+    # preenche o slug automático no django admin
+    prepopulated_fields = {
+        'slug': ('full_name',),
     }
