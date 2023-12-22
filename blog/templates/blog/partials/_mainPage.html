@@ -6,7 +6,7 @@
                 <div class="content-summary-me">
                     <h1>{{ page_setup.full_name }}</h1>
                     <h2>{{ page_setup.profission }}</h2>
-                    <h3>{{ page_setup.funtion_name }}</h3>
+                    <h3>{{ page_setup.function_name }}</h3>
                 </div>
                 <div class="content-contact">
                     <div class="contact-email">
@@ -16,7 +16,7 @@
                     <div class="contact-phone">
                         <label>Telefone/Whatsapp:</label>
                         <span>
-                            <a target="_Blank" class="link-whats-about" data-tooltip="Acesse nosso Whatsapp" href="https://api.whatsapp.com/send?phone=5567993367597&text=Olá vim pelo site.">
+                            <a target="_Blank" class="link-whats-about" data-tooltip="Acesse nosso Whatsapp" href="https://api.whatsapp.com/send?phone={{ page_setup.phone }}&text=Olá vim pelo site.">
                                 {{ page_setup.phone }}
                             </a>
                         </span>

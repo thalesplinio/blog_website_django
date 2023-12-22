@@ -6,6 +6,8 @@ from blog.models import Page
 def page(request):
     page_setup = Page.objects.order_by("-id").first()
 
+    print(page_setup.phone)
+
     context = {
         'page_setup': page_setup,
     }

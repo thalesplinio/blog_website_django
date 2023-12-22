@@ -109,3 +109,9 @@ class Page(models.Model):
 
     def __str__(self):
         return self.full_name
+
+
+class Post(models.Model):
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
