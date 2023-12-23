@@ -24,7 +24,7 @@ def index(request):
         'page_obj': page_obj,
         'posts_destaque': posts_destaque,
         'technology': technology,
-        'page_title': 'Home - ',
+        'page_title': 'Página inicial - ',
     }
 
     return render(
