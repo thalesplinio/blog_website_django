@@ -78,6 +78,17 @@ main .post-content-postage{
     margin-right: auto;
     padding: 50px 10px 50px 10px;
 }
+.title-tags-page-content{
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title-tags-page-content h3{
+    text-align: center !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .post-details-owner-footer{
     padding-top: 50px;

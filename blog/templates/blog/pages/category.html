@@ -1,0 +1,67 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <main>
+        <section>
+          <div class="title-content-main-section">
+            <span>
+                PROJETOS > CATEGORIA > 
+                {% for post in page_obj %}
+                    {% if forloop.counter == 1 %}
+                        {{ post.category }}
+                    {% endif %}
+                {% endfor %}
+                {% comment %} {% for post in page_obj %}
+                    PROJETOS > CATEGORIA > {{ post.category }}
+                {% endfor %} {% endcomment %}
+            </span>
+            <div class="separator-titles-section"></div>
+          </div>
+    
+          <div class="title-tags-page-content">
+                {% for post in page_obj %}
+                    {% if forloop.counter == 1 %}
+                        <h3>Projetos relacionados com {{ post.category }}</h3>
+                    {% endif %}
+                {% endfor %}
+            <div class="separator"></div>
+          </div>
+
+            <div class="card-container">
+                {% if page_obj %}
+                    {% for post in page_obj %}
+                    <div class="card">
+                    <a href="{% url 'blog:post' post.slug %}">
+
+                        {% if post.cover %}
+                        <img src="{{ post.cover.url }}" alt="Imagem do post {{ post.title }}">
+                        {% endif %}
+
+                    </a>
+                    
+                    <div class="card-content">
+                        <a href="{% url 'blog:post' post.slug %}">
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.excerpt }}</p>
+                        <a href="{% url 'blog:post' post.slug %}" class="btn-black">Ver mais</a>
+                        
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    {% else %}
+                    <div class="not-found">
+                        <h1>Não encontramos nada! 😔</h1>
+                        <p>Não encontramos nada direcionado a esse link, por favor clique em outro link
+                        ou vá para a inicio clique <a href="{% url 'blog:index' %}">aqui</a>
+                        </p>
+                    </div>
+                    {% endif %}
+            </div>
+    
+
+        </section>
+    </main>
+
+    {% include "blog/partials/_pagination.html" %}
+{% endblock content %}

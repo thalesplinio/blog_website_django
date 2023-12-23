@@ -33,6 +33,16 @@
     flex-shrink: 0;
 }
 /* SEPARADORES */
+img{
+    margin: 0 auto;
+}
+/* codemirror */
+.CodeMirror{
+    height: auto !important;
+}
+.CodeMirror-linenumber{
+    left: -30px !important;
+}
 selection{
     background: #ff4d4f;
     color: #fff;

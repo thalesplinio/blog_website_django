@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from blog.models import Post, Page, Technology
+from django.contrib.auth.models import User
+from django.http import Http404
 
 PER_PAGE = 12
 
@@ -9,8 +11,7 @@ def index(request):
     # puxando nossos 3 posts mais recentes do index
     posts = Post.objects.filter(is_published=True).order_by("-pk").all()[:3]
     # puxando post em destaque, sempre o mais atualizado
-    # posts_destaque = Post.objects.filter(
-    #     is_published=True).latest("created_at")
+    posts_destaque = Post.objects.filter(is_published=True).latest("created_at")
     # puxando tecnologias
     technology = Technology.objects.all()
 
@@ -21,8 +22,9 @@ def index(request):
     context = {
         'posts': posts,
         'page_obj': page_obj,
-        # 'posts_destaque': posts_destaque,
+        'posts_destaque': posts_destaque,
         'technology': technology,
+        'page_title': 'Home - ',
     }
 
     return render(
@@ -35,8 +37,17 @@ def index(request):
 def page(request):
     page_setup = Page.objects.order_by("-id").first()
 
+    # Busca do full_name da pagina
+    page = Page.objects.first()
+
+    if page is None:
+        raise Http404()
+
+    page_title = f"{page.full_name} - Sobre min - "
+
     context = {
         'page_setup': page_setup,
+        'page_title': page_title,
     }
 
     return render(
@@ -50,28 +61,51 @@ def post(request, slug):
     # para puxar o post de cada link que clicar
     post = Post.objects.get_published().filter(slug=slug).first()
 
+    if post is None:
+        raise Http404()
+
+    page_title = f"{post.title} - Post - "
+
+    context = {
+        'post': post,
+        'page_title': page_title,
+
+    }
+
     return render(
         request,
         'blog/pages/post.html',
-        {
-            'post': post,
-        }
+        context,
     )
 
 
 def created_by(request, author_pk):
+    user = User.objects.filter(pk=author_pk).first()
     post = Post.objects.get_published().filter(created_by__pk=author_pk)
+
+    # POSTS TITLE
+    if user is None:
+        raise Http404()
+
+    user_full_name = user.username
+    if user.first_name:
+        user_full_name = f"{user.first_name} {user.last_name}"
+    page_title = 'Posts de ' + user_full_name + ' - '
+    # POSTS TITLE AND
 
     paginator = Paginator(post, PER_PAGE)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
+    context = {
+        'page_obj': page_obj,
+        'page_title': page_title,
+    }
+
     return render(
         request,
-        'blog/pages/projects.html',
-        {
-            'page_obj': page_obj,
-        }
+        'blog/pages/created_by.html',
+        context,
     )
 
 
@@ -82,12 +116,57 @@ def category(request, slug):
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
+    # CATEGORY TITLE
+    if len(page_obj) == 0:
+        raise Http404()
+
+    page_title = f"{page_obj[0].category.name} - Categoria - "
+    print(page_title)
+    # CATEGORY TITLE AND
+
+    context = {
+        'page_obj': page_obj,
+        'page_title': page_title,
+    }
+
     return render(
         request,
-        'blog/pages/projects.html',
-        {
-            'page_obj': page_obj,
-        }
+        'blog/pages/category.html',
+        context,
+    )
+
+
+def tag(request, slug):
+    post = Post.objects.get_published().filter(tags__slug=slug)
+
+    paginator = Paginator(post, PER_PAGE)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    # TAG TITLE
+    if len(page_obj) == 0:
+        raise Http404()
+
+    filtered_tags = page_obj[0].tags.filter(slug=slug)
+
+    if filtered_tags.exists():  # Verifica se a tag existe
+        tag = filtered_tags.first()  # Obtém a primeira tag
+        page_title = f"{tag.name} - Tag - "
+        page_title_for_tag_page = f"{tag.name}"
+    else:
+        page_title = f"Posts com a tag '{slug}'"
+    # TAG TITLE AND
+
+    context = {
+        'page_obj': page_obj,
+        'page_title': page_title,
+        'page_title_for_tag_page': page_title_for_tag_page,
+    }
+
+    return render(
+        request,
+        'blog/pages/tags.html',
+        context
     )
 
 
@@ -99,10 +178,13 @@ def projects(request):
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
+    context = {
+        'page_obj': page_obj,
+        'page_title': 'Home - ',
+    }
+
     return render(
         request,
         'blog/pages/projects.html',
-        {
-            'page_obj': page_obj,
-        }
+        context,
     )

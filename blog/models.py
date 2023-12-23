@@ -158,6 +158,7 @@ class Post(models.Model):
         max_length=255,
     )
     excerpt = models.CharField(max_length=300)
+    # status_project = models.CharField(max_length=50)
     is_published = models.BooleanField(
         default=False,
         verbose_name="Publicar?",

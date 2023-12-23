@@ -2,10 +2,10 @@
 <main>
     <article class="main-content-post">
         <div class="title-post">
-            <h1>{{ post.title }}</h1>
+            <h1>{{ post.title | safe }}</h1>
         </div>
         <div class="post-subtitle">
-            <p>{{ post.excerpt }}</p>
+            <p>{{ post.excerpt | safe }}</p>
         </div>
         <div class="details-post-owner">
             <div class="post-by">
@@ -28,7 +28,7 @@
             {% if post.category %}
                 <div class="post-category">
                     <label>Category:</label>
-                    <a href="{% url 'blog:category' post.category.slug%}">
+                    <a href="{% url 'blog:category' post.category.slug %}">
                         <span>{{ post.category.name }}</span>
                     </a>
                 </div>
@@ -52,40 +52,47 @@
                 src="{{ post.cover.url }}" />
             {% endif %}
             
-            {{ post.content|safe }}
+            {{ post.content | safe }}
+
         </div>
         <div class="separator"></div>
         <!-- POST CONTENT FIM -->
                 
-
-
-
-
-
-
         <div class="post-details-owner-footer">
             <div class="details-post-owner">
                 <div class="post-by">
                     <label>Por:</label>
-                    <span>Thales Plinio Alves Feitosa</span>
+                    <a href="{% url 'blog:created_by' post.created_by.pk %}">
+                        <span>
+                            {% if post.created_by.first_name %}
+                                {{ post.created_by.first_name }} {{ post.created_by.last_name }}
+                            {% else %}
+                                {{ post.created_by.username }}
+                            {% endif %}
+                        </span>
+                    </a>
                 </div>
                 <div class="post-date">
-                    <label>19 de Dezembro de 2023</span>
+                    <label>{{ post.created_at }}</span>
                 </div>
                 <div class="post-category">
                     <label>Category:</label>
-                    <span>Game</span>
+                    <a href="{% url 'blog:category' post.category.slug %}">
+                        <span>{{ post.category.name }}</span>
+                    </a>
                 </div>
             </div>
             <br>
-            <div class="post-status">
-                <label>Tags:</label>
-                <a href="#" class="btn-black-tag">Unity</a>
-                <a href="#" class="btn-black-tag">C Sharp</a>
-                <a href="#" class="btn-black-tag">Python</a>
-                <a href="#" class="btn-black-tag">Jogos</a>
-                <a href="#" class="btn-black-tag">Prog</a>
-            </div>
+
+            {% if post.tags.all.exists %}
+                <div class="post-status">
+                    <label>Tags:</label>
+                    {% for tag in post.tags.all %}
+                        <a href="{% url 'blog:tag' tag.slug %}" class="btn-black-tag">{{ tag.name }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
         </div>
     </article>
 </main>
