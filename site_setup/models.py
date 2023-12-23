@@ -51,6 +51,10 @@ class SiteSetup(models.Model):
         default=True,
         verbose_name="Mostrar cabeçalho do site.",
     )
+    show_about_me = models.BooleanField(
+        default=True,
+        verbose_name="Mostrar página sobre mim",
+    )
     show_title_subtitle = models.BooleanField(
         default=True,
         verbose_name="Mostrar título e Subtitulo site.",

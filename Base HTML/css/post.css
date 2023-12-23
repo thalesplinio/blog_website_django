@@ -41,6 +41,12 @@ main .main-content-post,
     margin-right: 10px;
     padding: 10px;
 }
+.main-content-post .post-status-top{
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    margin-left: 40px;
+}
 .main-content-post .post-status {
     /* margin: 0 20px 30px 0;
      */
@@ -99,5 +105,8 @@ main .post-content-postage{
     }
     main .post-content-postage{
         padding: 50px 0 0 0;
+    }
+    .main-content-post .post-status-top{
+        margin-left: 0;
     }
 }

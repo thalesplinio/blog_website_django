@@ -24,9 +24,11 @@
                     <li>
                         <a href="{% url 'blog:projects' %}" class="text">Projetos</a>
                     </li>
-                    <li>
-                        <a href="{% url 'blog:page' %}" class="text">Sobre</a>
-                    </li>
+                    {% if site_setup.show_about_me %}
+                        <li>
+                            <a href="{% url 'blog:page' %}" class="text">Sobre</a>
+                        </li>
+                    {% endif %}
 
                     
                     {% comment %} {{ site_setup.menulink_set.all }} {% endcomment %}

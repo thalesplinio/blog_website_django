@@ -39,18 +39,27 @@ main .main-content-post,
 .main-content-post .post-status label{
     color: var(--texto-secundario-2-with);
     margin-right: 10px;
+    margin-left: 30px;
     padding: 10px;
 }
+.main-content-post .post-status-top label{
+    color: var(--texto-secundario-2-with);
+}
+.main-content-post .post-status-top{
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    margin-left: 40px;
+}
 .main-content-post .post-status {
-    /* margin: 0 20px 30px 0;
-     */
-     display: flex;
-     /* justify-content: center; */
-     flex-wrap: wrap;
-     margin: 30px 0px 50px 0;
-     padding: 10px;
-     cursor: pointer;
-     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0px 50px 0;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 10px;
+    cursor: pointer;
+    margin: auto;
 }
 .main-content-post .post-status a{
     margin: 4px;
@@ -99,5 +108,14 @@ main .post-content-postage{
     }
     main .post-content-postage{
         padding: 50px 0 0 0;
+    }
+    .main-content-post .post-status-top{
+        margin-left: 0;
+    }
+    .main-content-post .post-status label{
+        color: var(--texto-secundario-2-with);
+        margin-right: 0;
+        margin-left: 0;
+        padding: 10px;
     }
 }
