@@ -43,6 +43,10 @@ img{
 .CodeMirror-linenumber{
     left: -30px !important;
 }
+iframe{
+    margin: 0 auto;
+}
+element.style a
 selection{
     background: #ff4d4f;
     color: #fff;

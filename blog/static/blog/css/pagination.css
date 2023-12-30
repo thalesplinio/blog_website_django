@@ -1,0 +1,8 @@
+.material-symbols-outlined{
+    background-color: var(--cor-hover);
+    width: 25px;
+    border-radius: 10px;
+}
+.current{
+    padding: 10px;
+}

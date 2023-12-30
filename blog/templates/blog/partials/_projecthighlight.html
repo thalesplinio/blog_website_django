@@ -1,28 +1,30 @@
-{% if site_setup.show_project_highlight %}
-    <!-- PROJETO DESTAQUE -->
-    <article class="content-project">
+{% if posts_destaque %}
+    {% if site_setup.show_project_highlight %}
+        <!-- PROJETO DESTAQUE -->
+        <article class="content-project">
 
-        <span>PROJETO EM DESTAQUE</span>
-        <div class="separator-titles-section"></div>
-        <div class="separator-green"></div>
+            <span>PROJETO EM DESTAQUE</span>
+            <div class="separator-titles-section"></div>
+            <div class="separator-green"></div>
 
-            <div class="project">
-                <div class="title-project">
-                    <a href="{% url 'blog:post' posts_destaque.slug %}">
-                        <h1>{{ posts_destaque.title | safe }}</h1>
-                    </a>
-                    <p>{{ posts_destaque.excerpt | safe}}</p>
-                    <a href="{% url 'blog:post' posts_destaque.slug %}" class="btn-black">Ver mais</a>
+                <div class="project">
+                    <div class="title-project">
+                        <a href="{% url 'blog:post' posts_destaque.slug %}">
+                            <h1>{{ posts_destaque.title | safe }}</h1>
+                        </a>
+                        <p>{{ posts_destaque.excerpt | safe}}</p>
+                        <a href="{% url 'blog:post' posts_destaque.slug %}" class="btn-black">Ver mais</a>
+                    </div>
+
+                    <div class="image-project">
+                        <a href="{% url 'blog:post' posts_destaque.slug %}">
+                            <img src="{{ posts_destaque.cover.url }}" alt="">
+                        </a>
+                    </div>
                 </div>
 
-                <div class="image-project">
-                    <a href="{% url 'blog:post' posts_destaque.slug %}">
-                        <img src="{{ posts_destaque.cover.url }}" alt="">
-                    </a>
-                </div>
-            </div>
-
-    </article>
-    <div class="separator"></div>
-    <!-- PROJETO DESTAQUE -->
+        </article>
+        <div class="separator"></div>
+        <!-- PROJETO DESTAQUE -->
+    {% endif %}
 {% endif %}

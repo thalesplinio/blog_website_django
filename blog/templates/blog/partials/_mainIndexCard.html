@@ -18,8 +18,8 @@
 
                 <div class="card-content">
                     <a href="{% url 'blog:post' post.slug %}">
-                    <h2>{{ post.title | safe }}</h2>
-                    <p>{{ post.excerpt | safe}}</p>
+                    <h3>{{ post.title | safe }}</h3>
+                    <p>{{ post.excerpt | safe | slice:":90"}}</p>
                     <a href="{% url 'blog:post' post.slug %}" class="btn-black">Ver mais</a>
                 
                 </div>

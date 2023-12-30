@@ -173,7 +173,8 @@ html{
     display: flex;
 }
 .content-project .image-project img{
-    width: 600px;
+    max-width: 543px;
+    max-height: 350px;
     border-radius: 10px;
 }
 .content-project .project .title-project .btn-black{

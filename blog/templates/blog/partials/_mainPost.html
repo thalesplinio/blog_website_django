@@ -1,4 +1,5 @@
 <!-- MAIN POST -->
+{% if post %}
 <main>
     <article class="main-content-post">
         <div class="title-post">
@@ -97,3 +98,7 @@
     </article>
 </main>
 <!-- MAIN POST FIM -->
+{% else %}
+<h2>Nenhum post Encontrado!</h2>
+
+{% endif %}

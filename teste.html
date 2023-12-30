@@ -85,6 +85,63 @@
 
 
 
-</body>
 
+    <h2>Sobre o Projeto:</h2>
+    
+    <p>Este projeto foi feito para fins de estudo, desenvolvido pra cadastrar clientes de empresas substituindo assim o uso de planilhas Excel. Cadastro, visualização, pesquisa, alteração e remoção de registro.
+        Conta com registro de pessoa física e da empresa na qual reside, podemos também adicionar imagen ao registro. usando banco de dados SQLite3. e com a possibilidade de exportar esses registros em formato excel.</p>
+
+    <h3>Tecnologias e bibliotecas utilizadas.</h3>
+    <p>Ao iniciar o projeto instale todas as dependencias contidas em requirements.txt</p>
+    <pre data-language="python">pip install -r requirements.txt</pre>
+    
+    <ul>
+        <li>Pillow</li>
+        <li>API ViaCep</li>
+        <li>SQLite3</li>
+        <li>Cep gerado para fins de teste pelo site: https://www.4devs.com.br/gerador_de_cep</li>
+        <li>Cpf gerado para fins de teste pelo site: https://www.4devs.com.br/gerador_de_cpf</li>
+    </ul>
+
+    <h3>Autor</h3>
+    <h5>Thales Plinio Alves Feitosa.</h5>
+
+    <h3>Apresentação do projeto.</h3>
+
+    <h4>Tela inicial.</h4>
+    <p>Essa é a tela inicial do projeto, aqui é aonde vamos inserir os dados do cliente. podemos também inserir fotografia no registro.
+        No campo CEP, estou usando uma API 'viacep' para coletar os dados recebidos, quando o usuário insere um cep válido os campos (Endereço, Bairro, Cidade e Estado) são preenchidos automaticamente e aparece um ✅ informando visualmente que o cep foi encontrado. E se o usuário preencher um cep que nao for válido nada acontece.</p>
+    IMAGE-----------
+    <h4>Tela inicial Menu</h4>
+    <p>Menu superior intuitivo para o usuario.</p>
+    IMAGE-----------
+    <h4>Registro inserido com sucesso!</h4>
+    <p>Aqui é apresentado para o usuário que o registro foi inserido com sucesso.</p>
+    IMAGE-----------
+    <h4>Área de pesquisa.</h4>
+    <p>Aqui é nossa área de pesquisa, o usuário pode pesquisar por algum registro especifico pelo Nome ou Rg.</p>
+    IMAGE-----------
+    <h4>Área de Registros.</h4>
+    <p>Essa é nossa área de registros, aqui o usuário pode remover e editar registros. Ao clicar duas veses em cima do registro é aberta uma janela detalhando o registro.</p>
+    IMAGE-----------
+    <h4>Detalhes</h4>
+    <p>Nessa janela o usuário pode editar o registro, alterando campos e a imagem.</p>
+    IMAGE-----------
+    <p>Nesse exemplo alterei somente a imagem do registro.</p>
+    IMAGE-----------
+    <h4>Detalhes e Remoção de registro.</h4>
+    <p>Ainda na nossa área de detalhes ao clicar no registro e clicar no botão Apagar Registro é mostrado um popup para confirmar a exclusão.</p>
+    IMAGE-----------
+    <p>Clicando em sim, o registro é apagado e aparece outro popup com a confirmação de exclusão.</p>
+    IMAGE-----------
+    <h4>Salvando Registro em arquivo Excel.</h4>
+    <p>Ainda na tela de Registros temos um botão na direita da tela escrito Exportar em Excel, ou se preferir no menu superior Arquivo/Exportar banco em Excel, você pode exportar todos os registros em uma planilha excel.
+        Clicando no botão é aberta uma janela para que você indique o caminho e o nome do arquivo para salvar. Após feito isso aparece um popup para confirmar que o arquivo foi salvo com sucesso!</p>
+    <h4>Registros salvos em Excel.</h4>
+
+
+
+
+
+    </body>
 </html>
