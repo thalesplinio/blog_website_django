@@ -255,3 +255,10 @@ html{
         margin: 10px;
     }
 }
+
+
+.back-image{
+    background-image: url('img/background-top.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

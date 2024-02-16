@@ -7,3 +7,4 @@ from .view_created_by import *
 from .view_category import *
 from .view_tag import *
 from .view_projects import *
+from .view_search import *

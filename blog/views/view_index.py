@@ -10,8 +10,9 @@ def index(request):
     # puxando nossos 3 posts mais recentes do index
     posts = Post.objects.filter(is_published=True).order_by("-pk").all()[:3]
     # puxando post em destaque, sempre o mais atualizado
-    posts_destaque = Post.objects.filter(
-        is_published=True).latest("created_at")
+    # posts_destaque = Post.objects.filter(
+    #     is_published=True).latest("created_at")
+    posts_destaque = Post.objects.filter(is_published=True).order_by("-pk").all()[:1]
     # puxando tecnologias
     technology = Technology.objects.all()
 

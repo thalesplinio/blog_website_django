@@ -7,22 +7,23 @@
             <div class="separator-titles-section"></div>
             <div class="separator-green"></div>
 
+            {% for post in posts_destaque %}
                 <div class="project">
-                    <div class="title-project">
-                        <a href="{% url 'blog:post' posts_destaque.slug %}">
-                            <h1>{{ posts_destaque.title | safe }}</h1>
-                        </a>
-                        <p>{{ posts_destaque.excerpt | safe}}</p>
-                        <a href="{% url 'blog:post' posts_destaque.slug %}" class="btn-black">Ver mais</a>
-                    </div>
+                        <div class="title-project">
+                            <a href="{% url 'blog:post' post.slug %}">
+                                <h1>{{ post.title | safe }}</h1>
+                            </a>
+                            <p>{{ post.excerpt | safe}}</p>
+                            <a href="{% url 'blog:post' post.slug %}" class="btn-black">Ver mais</a>
+                        </div>
 
-                    <div class="image-project">
-                        <a href="{% url 'blog:post' posts_destaque.slug %}">
-                            <img src="{{ posts_destaque.cover.url }}" alt="">
-                        </a>
-                    </div>
+                        <div class="image-project">
+                            <a href="{% url 'blog:post' post.slug %}">
+                                <img src="{{ post.cover.url }}" alt="">
+                            </a>
+                        </div>
                 </div>
-
+            {% endfor %}
         </article>
         <div class="separator"></div>
         <!-- PROJETO DESTAQUE -->
