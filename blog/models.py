@@ -164,7 +164,7 @@ class Post(models.Model):
         verbose_name="Publicar?",
         help_text=(
             "Este campo precisará estar marcado para que a"
-            "pagina seja exibida publicamente."
+            "página seja exibida publicamente."
             ),
         )
     content = models.TextField(
