@@ -40,6 +40,7 @@ class Tag(models.Model):
         null=True,
         blank=True,
         max_length=255,
+        verbose_name="URL - gerado altomáticamente",
     )
 
     def save(self, *args, **kwargs):
@@ -57,13 +58,14 @@ class Category(models.Model):
         verbose_name = "Categoria"
         verbose_name_plural = "Categorias"
 
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, verbose_name="Nome")
     slug = models.SlugField(
         unique=True,
         default=None,
         null=True,
         blank=True,
         max_length=255,
+        verbose_name="URL - gerado altomáticamente",
     )
 
     def save(self, *args, **kwargs):
@@ -116,7 +118,7 @@ class Page(models.Model):
         null=True,
         blank=True,
         max_length=255,
-        verbose_name="URL",
+        verbose_name="URL - gerado altomáticamente",
     )
     is_published = models.BooleanField(
         default=False,
@@ -124,8 +126,8 @@ class Page(models.Model):
         help_text=(
             "Este campo precisará estar marcado para que a"
             "pagina seja exibida publicamente."
-            )
         )
+    )
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -149,15 +151,22 @@ class Post(models.Model):
 
     objects = PostManager()
 
-    title = models.CharField(max_length=150)
+    title = models.CharField(
+        max_length=150,
+        verbose_name="Titulo do post"
+    )
     slug = models.SlugField(
         unique=True,
         default=None,
         null=True,
         blank=True,
         max_length=255,
+        verbose_name="URL - gerado altomáticamente"
     )
-    excerpt = models.CharField(max_length=300)
+    excerpt = models.CharField(
+        max_length=300,
+        verbose_name="Subtitulo do post"
+    )
     # status_project = models.CharField(max_length=50)
     is_published = models.BooleanField(
         default=False,
@@ -174,27 +183,41 @@ class Post(models.Model):
         upload_to='posts/%Y/%m/',
         blank=True,
         default='',
+        help_text=(
+            "Recomendações de imagem com resolução"
+            "Largura 550px, Altura 350px"
+        ),
+        verbose_name="Imagem de capa do post",
     )
     cover_in_post_content = models.BooleanField(
         default=True,
-        help_text="Exibe a imagem de capa também dentro do conteúdo do post?",
+        help_text="Exibir a imagem de capa também dentro do conteúdo do post?",
+        verbose_name="capa no conteúdo do post?"
     )
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Criado em"
+    )
     # user.post_created_by.all
     created_by = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
         blank=True,
         null=True,
-        related_name='post_created_by'
+        related_name='post_created_by',
+        verbose_name="Criado em"
     )
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name="Atualizado em"
+    )
     # user.post_updated_by.all
     updated_by = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
         blank=True, null=True,
-        related_name='post_updated_by'
+        related_name='post_updated_by',
+        verbose_name="Atualizado por"
     )
     category = models.ForeignKey(
         Category,
@@ -202,11 +225,13 @@ class Post(models.Model):
         null=True,
         blank=True,
         default=None,
+        verbose_name="Categoria"
     )
     tags = models.ManyToManyField(
         Tag,
         blank=True,
         default='',
+        verbose_name="Tag"
     )
 
     def get_absolute_url(self):
@@ -260,3 +285,4 @@ class Technology(models.Model):
 
     def __str__(self):
         return self.name
+
