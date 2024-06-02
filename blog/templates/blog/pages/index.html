@@ -1,11 +1,16 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    {% include "blog/partials/_titleSubTitle.html" %}
-
-    {% include "blog/partials/_projecthighlight.html" %}
-
-    {% include "blog/partials/_contentTechnologies.html" %}
+    {% if posts %}
     
-    {% include "blog/partials/_mainIndexCard.html" %}
+        {% include "blog/partials/_titleSubTitle.html" %}
+        
+        {% include "blog/partials/_projecthighlight.html" %}
+        
+        {% include "blog/partials/_contentTechnologies.html" %}
+        
+        {% include "blog/partials/_mainIndexCard.html" %}
+    {% else %}
+        <h1 style="text-align: center;">Site em construção...</h1>
+    {% endif %}
 {% endblock content %}
