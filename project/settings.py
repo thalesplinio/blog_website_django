@@ -90,19 +90,19 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-    # TODO : alterar para testes.
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("BANC_POSTGRES"),
-        'USER': os.getenv("USER_POSTGRES"),
-        'PASSWORD': os.getenv("PASS_POSTGRES"),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # TODO : alterar para testes.
+    #'default': {
+    #   'ENGINE': 'django.db.backends.postgresql',
+    #    'NAME': os.getenv("BANC_POSTGRES"),
+    #    'USER': os.getenv("USER_POSTGRES"),
+    #    'PASSWORD': os.getenv("PASS_POSTGRES"),
+    #    'HOST': 'localhost',
+    #    'PORT': '5432',
+    #}
     
 }
 
