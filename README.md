@@ -73,8 +73,9 @@ python manage.py migrate
 
 ### Se deu tudo certo você verá uma página assim
 
-<img src="imgreadme/01img.png" width="900px"/>
-
+<p align="center">
+    <img src="imgreadme/01img.png" width="400px"/>
+</p>
 ### 📌 Agora precisamos criar um super usuário para acessar a área administrativa e fazer as configurações do site.
 
 ```python
@@ -93,21 +94,21 @@ python manage.py createsuperuser
 - ### Tela inicial com site com o tema escuro aplicado
 
 <p align="center">
-    <img src="imgreadme/03image.png" alt="Tela inicial do site já preenchida com tema escuro" width="700px"/>
+    <img src="imgreadme/03image.png" alt="Tela inicial do site já preenchida com tema escuro" width="600px"/>
 </p>
 
 ---
 
 - ### Página da postagem
 <p align="center">
-    <img src="imgreadme/04image.png" alt="Tela de uma postagem sobre o python" width="700px"/>
+    <img src="imgreadme/04image.png" alt="Tela de uma postagem sobre o python" width="600px"/>
 </p>
 
 ---
 
 - ### Menu projetos, listando projetos ou postagens com noticias.
 <p align="center">
-    <img src="imgreadme/05image.png" alt="menu projetos, listando 2 projetos" width="800px"/>
+    <img src="imgreadme/05image.png" alt="menu projetos, listando 2 projetos" width="700px"/>
 </p>
 
-#### Autor: Thales Plino.
+#### Autor: Thales Plinio.
