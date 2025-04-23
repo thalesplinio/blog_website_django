@@ -1,7 +1,7 @@
 <h1 style="text-align:center;">Blog Com Django e PostegreSQL</h1>
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-![Maintainer](https://img.shields.io/badge/Lcence-MIT-blue)
+[![Maintainer](https://img.shields.io/badge/Licence-MIT-blue)](https://github.com/thalesplinio/blog_website_django/blob/main/LICENSE)
 
 </br>
 
